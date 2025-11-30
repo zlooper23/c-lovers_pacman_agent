@@ -4,14 +4,11 @@ from game import Directions
 import game
 
 def create_team(first_index, second_index, is_red,
-                first='UnifiedReflexAgent', second='UnifiedReflexAgent'):
-    """
-    Crea dos instancias de UnifiedReflexAgent.
-    """
-    return [UnifiedReflexAgent(first_index, isFirst=True, teammateIndex=second_index),
-            UnifiedReflexAgent(second_index, isFirst=False, teammateIndex=first_index)]
+                first='ReflexAgent', second='ReflexAgent'):
+    return [ReflexAgent(first_index, isFirst=True, teammateIndex=second_index),
+            ReflexAgent(second_index, isFirst=False, teammateIndex=first_index)]
 
-class UnifiedReflexAgent(CaptureAgent):
+class ReflexAgent(CaptureAgent):
     
     def __init__(self, index, isFirst=False, teammateIndex=None):
         super().__init__(index)
@@ -226,4 +223,5 @@ class UnifiedReflexAgent(CaptureAgent):
                 'distance_to_food': 0, 
                 'ghost_danger': 0, 
                 'distance_to_home': 0
+
             }
