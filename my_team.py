@@ -179,7 +179,7 @@ class ReflexAgent(CaptureAgent):
             mid_y = game_state.data.layout.height // 2
             features['patrol_distance'] = self.get_maze_distance(my_pos, (mid_x, mid_y))
 
-        ·
+        
         #Code to don't get stuck in loops
         features['loop_penalty'] = 0
         successor = self.get_successor(game_state, action)
@@ -225,3 +225,4 @@ class ReflexAgent(CaptureAgent):
                 'distance_to_home': 0
 
             }
+
