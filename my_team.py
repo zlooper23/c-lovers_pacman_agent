@@ -79,11 +79,11 @@ class ReflexAgent(CaptureAgent):
           if score < -4:
               return "Offense"
         else:
-          if score > -4:
+          if score < -4:
               return "Defense"
           
           #If losing significantly, play offense
-          if score < 4:
+          if score > 4:
               return "Offense"
 
         #If there is an invader, the closest agent plays defense (chases the invader)
@@ -233,5 +233,6 @@ class ReflexAgent(CaptureAgent):
                 'distance_to_home': 0
 
             }
+
 
 
