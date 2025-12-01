@@ -71,12 +71,20 @@ class ReflexAgent(CaptureAgent):
         invaders = [a for a in enemies if a.is_pacman and a.get_position() is not None]
                 
         #If winning significantly, play defense
-        if score > 4:
-            return "Defense"
-        
-        #If losing significantly, play offense
-        if score < -4:
-            return "Offense"
+        if self.red:
+          if score > 4:
+              return "Defense"
+          
+          #If losing significantly, play offense
+          if score < -4:
+              return "Offense"
+        else:
+          if score > -4:
+              return "Defense"
+          
+          #If losing significantly, play offense
+          if score < 4:
+              return "Offense"
 
         #If there is an invader, the closest agent plays defense (chases the invader)
         if len(invaders) > 0:
@@ -225,4 +233,5 @@ class ReflexAgent(CaptureAgent):
                 'distance_to_home': 0
 
             }
+
 
